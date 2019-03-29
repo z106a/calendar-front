@@ -1,0 +1,136 @@
+@import "./vars";
+@import "./mixins";
+@import './csstransitions.scss';
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+// Here you put all global css rules.
+body {
+  margin: 20 auto;
+  padding: 0;
+  font-family: $sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
+}
+textarea, select, input, button { outline: none; }
+
+input, button {
+  @include button-reset;
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  padding: 10px 15px;
+  // margin-bottom: 10px;
+  font-size: 0.8rem;
+  /* margin-bottom: 5px; */
+  border-radius: 0;
+  
+  // -webkit-appearance: none;
+}
+.container {
+  margin: 1rem;
+}
+.react-calendar {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%!important;
+  border: 0!important;
+  &__tile:enabled:hover {
+    background-color: $colorA;
+    color: white;
+  }
+  &__navigation button {
+    font-size: larger;
+  }
+  .hasScheduled:not(.react-calendar__tile--active) {
+    abbr {
+      padding: .4em;
+      // background-color: rgba(0, 0, 255, .3);
+      border-radius: 50%;
+      border: .4px grey solid;
+    }
+  }
+}
+.hidden {
+  display: none;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+%button-shared {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 5px;
+  background-color: #1c89ff;
+  border: solid 1px transparent;
+  color: #fff;
+  cursor: pointer;
+  @include shadow;
+  transition: all .1s ease-in-out;
+  &:hover {
+    background-color: $colorA;
+    border-color: #fff;
+    transition: all .1s ease-in-out;
+  }
+}
+button.submit {
+  @extend %button-shared;
+  width: 80%;
+  font-size: 18px;
+  font-weight: 300;
+}
+@media (max-width: 900px) {
+  .ui.cards {
+    // display: inline-block;
+  }
+}
+.items {
+  padding: 1.2em;
+  .header {
+    padding: .7em;
+    color: #FFCE00 !important;
+    border-radius: 4px;
+    &.added {
+      background-color: #a0b8e1;
+      color: #ffeea5;
+    }
+  }
+  .description {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1.5s ease-in-out;
+    &.show {
+      visibility: visible;
+      opacity: 1;;
+    }
+    p {
+      animation: FadeIn 1s linear;  
+      animation-fill-mode: both;
+    }
+  }
+  &:hover{ 
+    // background-color:;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+}
+
+@keyframes FadeIn { 
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

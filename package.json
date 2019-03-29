@@ -3,9 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
+    "react-calendar": "^2.18.1",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-immutable-proptypes": "^2.1.0",
+    "react-md-spinner": "^0.3.0",
+    "react-phone-input-2": "^2.8.0",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "react-selector-hooks": "^0.1.0",
+    "react-transition-group": "^2.6.0",
+    "redux": "^4.0.1",
+    "redux-create-reducer": "^2.0.0",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -13,6 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3100",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -21,5 +42,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^1.5.1",
+    "redux-devtools-extension": "^2.13.8",
+    "why-did-you-update": "^1.0.6"
+  }
 }
